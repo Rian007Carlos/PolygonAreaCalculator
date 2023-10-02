@@ -9,7 +9,7 @@ public class Main {
         int numSides = input.nextInt();
 
         System.out.print("Input the length of one of the sides: ");
-        double sideLength = input.nextDouble();
+        double sideLength = parseDouble(input.next());
 
         // Calcule a área do polígono aqui
         double area = calculatePolygonArea(numSides, sideLength);
@@ -20,9 +20,17 @@ public class Main {
 
     // Implemente a função para calcular a área do polígono.
     private static double calculatePolygonArea(int numSides, double sideLength) {
-
         // Cálculo da área do polígono.
-
         return (numSides * Math.pow(sideLength, 2)) / 4 / Math.tan(Math.PI / numSides);
+    }
+    // Método para converter String em double, tratando possíveis exceções.
+    private static double parseDouble(String s) {
+        try {
+            return Double.parseDouble(s);
+        } catch(NumberFormatException e) {
+            System.err.println("Input is not a valid number.");
+            System.exit(1);
+            return 0;
+        }
     }
 }
