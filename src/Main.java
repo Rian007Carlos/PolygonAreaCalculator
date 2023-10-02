@@ -5,7 +5,10 @@ public class Main {
         Scanner input = new Scanner(System.in);
 
         // Solicite ao usuário o número de lados e o comprimento de um lado.
-        System.out.print("Input the number of one of the sides: ");
+        System.out.print("Input the number of sides on the polygon: ");
+        int numSides = input.nextInt();
+
+        System.out.print("Input the length of one of the sides: ");
         double sideLength = input.nextDouble();
 
         // Calcule a área do polígono aqui
@@ -18,5 +21,8 @@ public class Main {
     // Implemente a função para calcular a área do polígono.
     private static double calculatePolygonArea(int numSides, double sideLength) {
 
+        // Cálculo da área do polígono.
+
+        return (numSides * Math.pow(sideLength, 2)) / 4 / Math.tan(Math.PI / numSides);
     }
 }
